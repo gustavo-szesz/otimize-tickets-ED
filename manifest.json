@@ -5,9 +5,19 @@
   "description": "Extensão interna para captura passiva de dados visíveis no HubSpot Help Desk e cópia de observação padronizada.",
   "permissions": ["activeTab", "scripting", "clipboardWrite", "storage"],
   "host_permissions": ["https://app.hubspot.com/help-desk/*"],
+  "icons": {
+    "16": "images/logo-preenchido-isotipo-magenta-09.png",
+    "32": "images/logo-preenchido-isotipo-magenta-09.png",
+    "48": "images/logo-preenchido-isotipo-magenta-09.png",
+    "128": "images/logo-preenchido-isotipo-magenta-09.png"
+  },
   "action": {
     "default_title": "Observação HubSpot",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/logo-preenchido-isotipo-magenta-09.png",
+      "32": "images/logo-preenchido-isotipo-magenta-09.png"
+    }
   },
   "content_scripts": [
     {

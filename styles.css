@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f8fa;
+}
+
+.popup {
+  width: 360px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.status {
+  min-height: 20px;
+  margin-bottom: 10px;
+  color: #0a5c2d;
+  font-size: 12px;
+}
+
+.status.error {
+  color: #a21717;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px 8px;
+  border: 1px solid #c5ced8;
+  border-radius: 6px;
+  font-size: 12px;
+  resize: vertical;
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2774ff;
+  outline: none;
+}
+
+.actions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+button {
+  border: 1px solid #c5ced8;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eef4ff;
+}
+
+button.primary {
+  background: #2774ff;
+  border-color: #2774ff;
+  color: #fff;
+}
+
+button.primary:hover {
+  background: #1e63db;
+}

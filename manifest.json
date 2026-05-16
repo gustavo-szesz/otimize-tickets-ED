@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "HubSpot Help Desk - Observação Interna",
+  "version": "1.0.0",
+  "description": "Extensão interna para captura passiva de dados visíveis no HubSpot Help Desk e cópia de observação padronizada.",
+  "permissions": ["activeTab", "scripting", "clipboardWrite", "storage"],
+  "host_permissions": ["https://app.hubspot.com/help-desk/*"],
+  "action": {
+    "default_title": "Observação HubSpot",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.hubspot.com/help-desk/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

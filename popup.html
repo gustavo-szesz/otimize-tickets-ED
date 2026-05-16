@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observação HubSpot</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <h1>Resumo interno</h1>
+
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <div class="form-grid">
+        <label for="empresa">Cliente/empresa</label>
+        <input id="empresa" type="text" />
+
+        <label for="usuario">Usuário/contato</label>
+        <input id="usuario" type="text" />
+
+        <label for="email">E-mail</label>
+        <input id="email" type="email" />
+
+        <label for="orgId">Org-id / ID EngagED 2.0</label>
+        <input id="orgId" type="text" />
+
+        <label for="ticketId">Ticket HubSpot</label>
+        <input id="ticketId" type="text" />
+
+        <label for="ticketUrl">Link do ticket</label>
+        <input id="ticketUrl" type="url" />
+
+        <label for="canal">Canal</label>
+        <input id="canal" type="text" />
+
+        <label for="motivo">Motivo do contato</label>
+        <textarea id="motivo" rows="2"></textarea>
+
+        <label for="acao">Ação realizada</label>
+        <textarea id="acao" rows="2"></textarea>
+
+        <label for="proximoPasso">Próximo passo</label>
+        <textarea id="proximoPasso" rows="2"></textarea>
+
+        <label for="observacoes">Observações</label>
+        <textarea id="observacoes" rows="3"></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="btnCaptureTicket" type="button">Capturar dados do ticket</button>
+        <button id="btnCaptureOrgId" type="button">Capturar org-id visível</button>
+        <button id="btnCopy" type="button" class="primary">Copiar observação</button>
+        <button id="btnClear" type="button">Limpar campos</button>
+      </div>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

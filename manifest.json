@@ -22,7 +22,14 @@
   "content_scripts": [
     {
       "matches": ["https://app.hubspot.com/help-desk/*"],
-      "js": ["content.js"],
+      "js": [
+        "content/constants.js",
+        "content/dom-utils.js",
+        "content/ticket-extractor.js",
+        "content/orgid-extractor.js",
+        "content/message-handler.js",
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ]

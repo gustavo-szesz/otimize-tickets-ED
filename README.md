@@ -44,3 +44,33 @@ Extensão Chrome interna para suporte técnico que lê apenas dados **visíveis*
 - `content.js`
 - `styles.css`
 - `README.md`
+
+## Arquitetura (camadas)
+
+### Popup (UI + aplicação)
+
+- `popup/constants.js`: constantes de domínio (campos, actions, chave de storage, arquivos do content script).
+- `popup/dom.js`: acesso/manipulação de DOM do popup e status.
+- `popup/storage.js`: persistência e restauração com `chrome.storage.local`.
+- `popup/messaging.js`: comunicação com content script e reinjeção quando necessário.
+- `popup/observation.js`: montagem do texto final da observação.
+- `popup/use-cases.js`: fluxos de captura/copiar/limpar.
+- `popup/main.js`: bootstrap da tela e bind de eventos.
+- `popup.js`: entrada final do popup.
+
+### Content script (extração de dados)
+
+- `content/constants.js`: regexes, regras e seletores.
+- `content/dom-utils.js`: utilitários de visibilidade, shadow DOM e leitura de texto.
+- `content/ticket-extractor.js`: extração de campos gerais do ticket.
+- `content/orgid-extractor.js`: heurística de extração de org-id visível.
+- `content/message-handler.js`: roteamento de mensagens do popup.
+- `content.js`: bootstrap e registro do listener.
+
+### Fluxo principal
+
+1. Usuário aciona um botão no popup.
+2. Popup executa um use-case.
+3. Use-case envia mensagem para o content script.
+4. Content script extrai os dados visíveis e responde.
+5. Popup atualiza campos, persiste em storage e/ou copia a observação para área de transferência.
